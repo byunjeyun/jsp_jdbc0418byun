@@ -5,20 +5,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원가입 성공</title>
+<title>Insert title here</title>
 </head>
 <body>
 	<%
-	request.setCharacterEncoding("utf-8");
-	
-	String mId=request.getParameter("id");
-	String mPw=request.getParameter("pw");
-	String mName=request.getParameter("name");
-	String mEmail=request.getParameter("email");
-	
-		
-	String sql = "INSERT INTO members(ID, password, name, email) VALUES('"+mId+"','"+mPw+"','"+mName+"','"+mEmail+"')";
-	
+	String sql = "SELECT * FROM members";//members table 모든 데이터 불러오기
+
 	String driverName = "com.mysql.jdbc.Driver";
 	String url = "jdbc:mysql://localhost:3306/webdb";
 	String username = "root";
@@ -58,8 +50,5 @@
 	}
 	
 	%>
-	
-	<br><br>
-	<a href="memberlist.jsp">회원리스트 보기</a>
 </body>
 </html>
